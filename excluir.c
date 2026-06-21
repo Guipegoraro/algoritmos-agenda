@@ -1,34 +1,35 @@
 #include <stdlib.h>
 #include "modelo_dados.h"
-//#include "localizar.c"
 
-int Excluir() {
+int Excluir()
+{
+    int selecionado = Localizar();
 
-    int opcaoDeExcluir = 2;
-    int localizador;
+    if (selecionado == 0)
+    {
+        return 0;
+    }
 
-    while (opcaoDeExcluir != 1) {
+    Contato *novaLista = (Contato *)malloc(sizeof(Contato) * (ULTIMO_ID_VALIDO - 1));
 
-    localizador = Localizar(CONTATOS);
-
-    int id = CONTATOS[localizador - 1].id;
-    char *nome = CONTATOS[localizador - 1].nome;
-    printf("Id: %d, Nome: %s\n", CONTATOS[localizador - 1].id, CONTATOS[localizador - 1].nome);
-    
-    printf("Deseja excluir esse contato?\n1-Sim\n2-Não\n");
-        scanf("%d", &opcaoDeExcluir);
-
-        if (opcaoDeExcluir != 1 && opcaoDeExcluir != 2) {
-            printf("Opção inválida.");
+    int passou = 0;
+    for (int i = 0; i < ULTIMO_ID_VALIDO; i++)
+    {
+        if (CONTATOS[i].id == selecionado)
+        {
+            passou = 1;
+            continue;
         }
+        novaLista[i - passou] = CONTATOS[i];
+        novaLista[i - passou].id = i - passou + 1;
     }
 
-    for (int i = localizador - 1; i < ULTIMO_ID_VALIDO - 1; i++) {
-        CONTATOS[i] = CONTATOS[i + 1];
-    }
+    ULTIMO_ID_VALIDO = ULTIMO_ID_VALIDO - 1;
+    
+    free(CONTATOS);
+    CONTATOS = novaLista;
 
-    CONTATOS = (Contato*) realloc(CONTATOS, sizeof(Contato) * (ULTIMO_ID_VALIDO - 1));
+    Listar();
 
-    printf("Contato excluído.");
     return 0;
 }
