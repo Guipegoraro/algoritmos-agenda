@@ -9,6 +9,11 @@ enum TipoDeContato
   TRABALHO = 1
 };
 
+ const char *TiposDeContatos[] = {
+    "Pessoal",
+    "Trabalho",
+};
+
 typedef struct 
 {
   int id;
