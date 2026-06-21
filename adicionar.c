@@ -5,9 +5,16 @@ int Adicionar()
 {
     Contato contatoNovo;
 
-    CONTATOS = (Contato *)realloc(CONTATOS, sizeof(Contato) * ULTIMO_ID_VALIDO);
-
     ULTIMO_ID_VALIDO = ULTIMO_ID_VALIDO + 1;
+
+    if (ULTIMO_ID_VALIDO == 1)
+    {
+        CONTATOS = (Contato *)malloc(sizeof(Contato));
+    }
+    else
+    {
+        CONTATOS = (Contato *)realloc(CONTATOS, sizeof(Contato) * ULTIMO_ID_VALIDO);
+    }
 
     contatoNovo.id = ULTIMO_ID_VALIDO;
 
@@ -26,22 +33,23 @@ int Adicionar()
         {
             printf("Opção inválida!\n");
         }
-        else if (tipo = 1)
+        else if (tipo == 1)
         {
             contatoNovo.tipo = PESSOAL;
         }
-        else if (tipo = 2)
+        else if (tipo == 2)
         {
             contatoNovo.tipo = TRABALHO;
         }
     }
 
     CONTATOS[ULTIMO_ID_VALIDO - 1] = contatoNovo;
-    
-    printf("Contato cadastrado!\n");
-    int id = CONTATOS[ULTIMO_ID_VALIDO - 1].id;
-    char *nome = CONTATOS[ULTIMO_ID_VALIDO - 1].nome;
-    printf("Id: %d, Nome: %s\n", id, nome);
 
+    printf("Contato cadastrado!\n");
+    printf("Id: %d, Nome: %s, Telefone: %s, Tipo: %s \n",
+        CONTATOS[ULTIMO_ID_VALIDO - 1].id,
+        CONTATOS[ULTIMO_ID_VALIDO - 1].nome,
+        CONTATOS[ULTIMO_ID_VALIDO - 1].telefone,
+        TiposDeContatos[CONTATOS[ULTIMO_ID_VALIDO - 1].tipo]);
     return 0;
 }
