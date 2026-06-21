@@ -6,9 +6,10 @@ int Localizar(int usoInterno)
 
     while (localizador != 0)
     {
+        Listar();
         printf("Digite o ID do contato ou 0 para voltar ao menu:\n");
         scanf("%d", &localizador);
-        if ((localizador < 1 && localizador > 0) || localizador > ULTIMO_ID_VALIDO)
+        if (localizador < 0 || localizador > ULTIMO_ID_VALIDO)
         {
             printf("Id inválido.\n");
             continue;
