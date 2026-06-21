@@ -1,10 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "modelo_dados.h"
+#include "adicionar.c"
+#include "localizar.c"
+#include "excluir.c"
+#include "listar.c"
+#include "alterar.c"
 
-#include <./includes.c>
+int ULTIMO_ID_VALIDO = 10;
 
 int main(){
 
-    printf("teste");
-
+    Adicionar();
 
     return 0;
 }
