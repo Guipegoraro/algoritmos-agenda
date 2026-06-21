@@ -1,37 +1,47 @@
 #include <stdio.h>
-
-extern int ULTIMO_ID_VALIDO;
-
-
+#include "modelo_dados.h"
 
 int Adicionar()
 {
-    Contato contato;
+    Contato contatoNovo;
 
-    contato.id = ULTIMO_ID_VALIDO + 1;
+    CONTATOS = (Contato *) realloc(CONTATOS, sizeof(Contato) * ULTIMO_ID_VALIDO);
 
+
+    ULTIMO_ID_VALIDO = ULTIMO_ID_VALIDO + 1;
+    
+    contatoNovo.id = ULTIMO_ID_VALIDO;
+    
     printf("Preencha os dados do contato:\nNome: ");
-    scanf("%s", &(contato.nome));
-
+    scanf("%s", &(contatoNovo.nome));
+    
     printf("Telefone: ");
-    scanf("%s", &(contato.telefone));
-
+    scanf("%s", &(contatoNovo.telefone));
+    
     int tipo = 0;
     while (tipo != 1 && tipo != 2) {
-    printf("Tipo de contato:\n1-Pessoal\n2-Trabalho\n");
-    scanf("%d", &tipo);
+        printf("Tipo de contato:\n1-Pessoal\n2-Trabalho: ");
+        scanf("%d", &tipo);
         if (tipo != 1 && tipo != 2)
         {
             printf("Opção inválida!\n");
         }
         else if (tipo = 1)
         {
-            contato.tipo = PESSOAL;
+            contatoNovo.tipo = PESSOAL;
         }
         else if (tipo = 2)
         {
-            contato.tipo = TRABALHO;
+            contatoNovo.tipo = TRABALHO;
         }
     }
+    
+    CONTATOS[ULTIMO_ID_VALIDO - 1] = contatoNovo;
+    //imprimir contato criado direto da lista de contatos
+    printf("Contato cadastrado!\n");
+    char *id = CONTATOS[ULTIMO_ID_VALIDO - 1].nome;
+    char *nome = CONTATOS[ULTIMO_ID_VALIDO - 1].nome;
+    printf("Id: %s, Nome: %s", id, nome);
+
     return 0;
 }

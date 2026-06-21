@@ -1,8 +1,10 @@
+#include "modelo_dados.h"
+
 int Listar() {
     printf("Contatos:\n");
 
     for (int i=0; i < ULTIMO_ID_VALIDO; i++) {
-        printf((i + 1) + "-" + ("%s", &(Contatos[i].nome)) + " ID: " + ("%s", &(Contatos[i].id)));
+        printf("Id: %s, Nome: %s", CONTATOS[i].id, CONTATOS[i].nome);
     }
 
     return 0;

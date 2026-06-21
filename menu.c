@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include "modelo_dados.h"
 
 int main() {
 
-    int menu, tipo, localizar;
+    int menu;
 
     while (menu != 6) {
 
@@ -27,7 +28,7 @@ int main() {
             break;
             
             case 5:
-            printf("Selecione o contato que deseja excluir:\n");
+            Excluir(Contatos);
             break;
 
             case 6:

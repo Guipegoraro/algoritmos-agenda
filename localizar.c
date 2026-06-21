@@ -1,16 +1,25 @@
+#include "modelo_dados.h"
+
 int Localizar() {
 
-    int localizador = 9999;
+    int localizador;
 
-    while ()
-    printf("Digite o ID do contato que deseja localizar:\n");
-    scanf("%d", &localizador);
+    do {
+        printf("Digite o ID do contato que desejado:\n");
+        scanf("%d", &localizador);
 
-    if (ULTIMO_ID_VALIDO < localizador) {
-        printf
-    }
+        if (ULTIMO_ID_VALIDO < localizador || 1 > localizador) {
+            printf("Id inválido.\n");
+        }
 
-    for (int i = 0; i < localizador; i++) {
-    }
-    return 0;
+        else {
+            for (int i = 0; i < localizador; i++) {
+                if (CONTATOS[i].id = localizador) {
+                printf("Id: %s, Nome: %s", CONTATOS[i].id, CONTATOS[i].nome);
+                }
+        }
+        }
+    } while (ULTIMO_ID_VALIDO < localizador || 1 > localizador);
+
+    return localizador;
 }
