@@ -5,41 +5,53 @@
 #include "listar.c"
 #include "localizar.c"
 #include "excluir.c"
-//#include "alterar.c"
+#include "alterar.c"
 
 int ULTIMO_ID_VALIDO = 0;
 Contato *CONTATOS;
 
-int CriarPrimeiroContatoTeste()
-{    CONTATOS = (Contato *) malloc(sizeof(Contato));
-
-    ULTIMO_ID_VALIDO = ULTIMO_ID_VALIDO + 1;
-
-    Contato contatoTeste = {
-        ULTIMO_ID_VALIDO,
-        "Guilherme",
-        "48996881297"
-    };
-
-    CONTATOS[0] = contatoTeste;
-    printf("Nome: %s, Telefone: %s\n", contatoTeste.nome, contatoTeste.telefone);
-    return 0;
-}
-
 int main()
 {
-    CriarPrimeiroContatoTeste();
+    int menu;
 
-    //Alterar();
-    Adicionar();
-    Listar();
-    Localizar();
-    Excluir();
-    Listar();
+    while (menu != 6)
+    {
+
+        printf("Selecione uma das opções de contatos:\n1-Incluir\n2-Localizar\n3-Alterar\n4-Listar\n5-Excluir\n6-Encerrar programa\n");
+        scanf("%d", &menu);
+
+        switch (menu)
+        {
+        case 1:
+            Adicionar();
+            break;
+
+        case 2:
+            Localizar();
+            break;
+
+        case 3:
+            Alterar();
+            break;
+
+        case 4:
+            Listar();
+            break;
+
+        case 5:
+            Excluir();
+            break;
+
+        case 6:
+            printf("Programa encerrado.\n");
+            break;
+
+        default:
+            printf("Opção inválida!\n");
+            break;
+        }
+    }
+
+    free(CONTATOS);
     return 0;
 }
-
-
-
-//lembrar tratamento de dados
-//lembrar limpar memmoria free()
