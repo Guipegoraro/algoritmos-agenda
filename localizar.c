@@ -5,7 +5,7 @@ int Localizar() {
     int localizador;
 
     do {
-        printf("Digite o ID do contato que desejado:\n");
+        printf("Digite o ID do contato desejado:\n");
         scanf("%d", &localizador);
 
         if (ULTIMO_ID_VALIDO < localizador || 1 > localizador) {
@@ -15,7 +15,9 @@ int Localizar() {
         else {
             for (int i = 0; i < localizador; i++) {
                 if (CONTATOS[i].id = localizador) {
-                printf("Id: %s, Nome: %s", CONTATOS[i].id, CONTATOS[i].nome);
+                    int id = CONTATOS[localizador - 1].id;
+                    char *nome = CONTATOS[localizador - 1].nome;
+                printf("Id: %d, Nome: %s", CONTATOS[i].id, CONTATOS[i].nome);
                 }
         }
         }

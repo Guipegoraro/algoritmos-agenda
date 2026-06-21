@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "modelo_dados.h"
 #include "adicionar.c"
-// #include "localizar.c"
-// #include "excluir.c"
-// #include "listar.c"
-#include "alterar.c"
+#include "listar.c"
+#include "localizar.c"
+#include "excluir.c"
+//#include "alterar.c"
 
 int ULTIMO_ID_VALIDO = 0;
 Contato *CONTATOS;
@@ -30,8 +30,12 @@ int main()
 {
     CriarPrimeiroContatoTeste();
 
-    Alterar();
-    //Adicionar();
+    //Alterar();
+    Adicionar();
+    Listar();
+    Localizar();
+    Excluir();
+    Listar();
     return 0;
 }
 

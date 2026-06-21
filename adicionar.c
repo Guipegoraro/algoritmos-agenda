@@ -39,9 +39,9 @@ int Adicionar()
     CONTATOS[ULTIMO_ID_VALIDO - 1] = contatoNovo;
     //imprimir contato criado direto da lista de contatos
     printf("Contato cadastrado!\n");
-    char *id = CONTATOS[ULTIMO_ID_VALIDO - 1].nome;
+    int id = CONTATOS[ULTIMO_ID_VALIDO - 1].id;
     char *nome = CONTATOS[ULTIMO_ID_VALIDO - 1].nome;
-    printf("Id: %s, Nome: %s", id, nome);
+    printf("Id: %d, Nome: %s\n", id, nome);
 
     return 0;
 }

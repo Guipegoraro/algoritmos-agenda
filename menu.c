@@ -12,11 +12,11 @@ int main() {
 
         switch (menu) {
             case 1:
-            Adicionar(Contatos);
+            Adicionar(CONTATOS);
             break;
 
             case 2:
-            Localizar(Contatos);
+            Localizar(CONTATOS);
             break;
             
             case 3:
@@ -24,11 +24,11 @@ int main() {
             break;
             
             case 4:
-            Listar(Contatos);
+            Listar(CONTATOS);
             break;
             
             case 5:
-            Excluir(Contatos);
+            Excluir(CONTATOS);
             break;
 
             case 6:
