@@ -26,7 +26,7 @@ int Alterar()
     scanf("%s", &novoTelefone);
     strcpy(contato->telefone, novoTelefone);
 
-    printf("Contato atualizado:\nNome: %s, Telefone: %s", contato->nome, contato->telefone);
+    printf("Contato atualizado:\nNome: %s, Telefone: %s\n", contato->nome, contato->telefone);
 
     return 0;
 }
