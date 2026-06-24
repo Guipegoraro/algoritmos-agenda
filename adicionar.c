@@ -31,7 +31,7 @@ int Adicionar()
         scanf("%d", &tipo);
         if (tipo != 1 && tipo != 2)
         {
-            printf("Opção inválida!\n");
+            printf("Opcao invalida!\n");
         }
         else if (tipo == 1)
         {

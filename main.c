@@ -14,10 +14,10 @@ int main()
 {
     int menu;
 
-    while (menu != 6)
+    do
     {
 
-        printf("Selecione uma das opções de contatos:\n1-Incluir\n2-Localizar\n3-Alterar\n4-Listar\n5-Excluir\n6-Encerrar programa\n");
+        printf("Selecione uma das opcoes de contatos:\n1-Incluir\n2-Localizar\n3-Alterar\n4-Listar\n5-Excluir\n6-Encerrar programa\n");
         scanf("%d", &menu);
 
         switch (menu)
@@ -47,10 +47,10 @@ int main()
             break;
 
         default:
-            printf("Opção inválida!\n");
+            printf("Opcao invalida!\n");
             break;
         }
-    }
+    } while (menu != 6);
 
     free(CONTATOS);
     return 0;
