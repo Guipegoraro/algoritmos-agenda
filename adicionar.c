@@ -19,10 +19,10 @@ int Adicionar()
     contatoNovo.id = ULTIMO_ID_VALIDO;
 
     printf("Preencha os dados do contato:\nNome: ");
-    scanf("%s", &(contatoNovo.nome));
+    scanf("%s", contatoNovo.nome);
 
     printf("Telefone: ");
-    scanf("%s", &(contatoNovo.telefone));
+    scanf("%s", contatoNovo.telefone);
 
     int tipo = 0;
     while (tipo != 1 && tipo != 2)

@@ -26,4 +26,10 @@ typedef struct
 extern Contato *CONTATOS;
 extern int ULTIMO_ID_VALIDO;
 
+int Adicionar();
+int Listar();
+int Localizar();
+int Alterar();
+int Excluir();
+
 #endif

@@ -1,4 +1,7 @@
+#include <stdio.h>
 #include "modelo_dados.h"
+
+
 
 int Localizar()
 {
