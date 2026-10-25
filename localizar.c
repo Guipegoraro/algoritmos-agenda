@@ -11,7 +11,7 @@ int Localizar()
     {
         if (ULTIMO_ID_VALIDO == 0)
         {
-            printf("Sem contatos!");
+            printf("Sem contatos! ");
             return 0;
         }
 
